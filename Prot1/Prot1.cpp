@@ -2,13 +2,41 @@
 //
 
 #include <iostream>
+#include <string>
 
 int main()
 {
-    int big = 2000;
-    char small = big;
-    int nbig = small;
-    std::cout << nbig;
+    std:: string CorrectWords;
+    std::string UncorrectW = "Fuck fuck bitch Bitch";
+    while (std::cin >> CorrectWords)
+    {
+        int actW = 0;
+        for (int i = 0; i < (UncorrectW.size()-1); i++)
+        {
+            if (CorrectWords[0] == UncorrectW[i])
+            {
+                
+                int actBW = i;
+                for (; actBW <i+(CorrectWords.size()-1); actBW++)
+                {
+                    if (UncorrectW[actBW] == CorrectWords[actW])
+                        actW++;
+                }
+                if (actW == CorrectWords.size()-1)//dfndjrhgbwtbqfhjhkrwb
+                {
+                    std::cout << "Newer give up ";
+                }
+
+
+            }
+        }
+        if(actW!= CorrectWords.size()-1)
+        std::cout << CorrectWords << " ";
+
+    }
+
+
+    return 0;
 }
 
 // Запуск программы: CTRL+F5 или меню "Отладка" > "Запуск без отладки"
